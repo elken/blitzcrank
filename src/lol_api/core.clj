@@ -1,5 +1,3 @@
 (ns lol-api.core
-  (:require [environ.core :refer [env]]))
-
-(defn get-api-key []
-  (env :api-key))
+  "Core namespace"
+  (:require [lol-api.env :as env]))
