@@ -1,6 +1,6 @@
-(defproject lol-api "0.1.0-SNAPSHOT"
+(defproject lol-api "0.0.1"
   :description "Clojure version of the League of Legends API"
-  :url "https://elken.github.io/lol-api"
+  :url "https://github.com/elken/lol-api"
   :license {:name "BSD 3 Clause"
             :url  "https://opensource.org/licenses/BSD-3-Clause"}
   :plugins [[lein-codox "0.10.3"]]
@@ -13,5 +13,4 @@
   :codox
   {:output-path "../docs"
    :metadata    {:doc/format :markdown}
-   :source-uri  "http://github.com/elken/lol-api/blob/master/{filepath}#L{line}"}
-  :profiles {:dev {:resource-paths ["config"]}})
+   :source-uri  "http://github.com/elken/lol-api/blob/master/{filepath}#L{line}"})
