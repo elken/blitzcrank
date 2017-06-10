@@ -9,7 +9,12 @@
   "Convert a JSON response to a summoner model"
   [json]
   (let [json (parse-string (:body json) true)]
-    (model/->Summoner (:profileIconId json) (:name json) (:summonerLevel json) (:revisionDate json) (:id json) (:accountId json))))
+    (model/map->Summoner {:icon-id       (:profileIconId json)
+                          :name          (:name json)
+                          :level         (:summonerLevel json)
+                          :revision-date (:revisionDate json)
+                          :id            (:id json)
+                          :account-id    (:accountId json)})))
 
 (defn get-summoner-by-name
   "Get a summoner by summoner name."
