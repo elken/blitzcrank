@@ -1,5 +1,7 @@
 (ns lol-api.macros
-  (:use [slingshot.slingshot :only [try+]]))
+  (:use [slingshot.slingshot :only [try+]])
+  (:require [lol-api.api.v3.api :refer [get-resource-body]]
+            [lol-api.env :as env]))
 
 (defmacro try-all
   "Simple macro to try/catch multiple statements concisely.
@@ -13,10 +15,3 @@
                       (expand-catch form)
                       [form]))]
     (cons `try+ (mapcat transform body))))
-
-(defmacro def-
-  "Private `def`. Used to obscure internal things from docs and attempt to hide impls."
-  [sym init]
-  `(def
-     ~(with-meta sym {:private true})
-     ~init))
