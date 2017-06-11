@@ -1,4 +1,4 @@
-# lol-api [![Clojars Project](https://img.shields.io/clojars/v/lol-api.svg)](https://clojars.org/lol-api)
+# lol-api [![Clojars Project](https://img.shields.io/clojars/v/lol-api.svg)](https://clojars.org/lol-api) [![Build Status](https://travis-ci.org/elken/lol-api.svg?branch=master)](https://travis-ci.org/elken/lol-api)
 
 A Clojure implementation of the public [League of Legends API](https://developer.riotgames.com/). No access to tournament API yet.
 
