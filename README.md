@@ -77,8 +77,10 @@ Currently, this library only supports version 3 of the API, but this field has b
 
 Run in a REPL with `lein repl`. 
 
+### Documentation
 API documentation is [available](https://elken.github.io/lol-api/) and 
-generated using [codox](https://github.com/weavejester/codox).
+generated using [codox](https://github.com/weavejester/codox). Generate using `lein codox`, which by default will output
+the docs to `../docs`. <!-- Need to get rid of this ASAP -->
 
 ## License
 
