@@ -1,7 +1,6 @@
 (ns lol-api.api.http
   "HTTP interfacing methods"
   (:require [lol-api.util :as util]
-            [lol-api.macros :refer [try-all def-]]
             [lol-api.constants :refer [error-code-map]]
             [clj-http.client :as http]
             [cheshire.core :as json]
@@ -38,5 +37,5 @@
   ([url]
    (get-resource url nil))
   ([url params]
-     (println (<< "Attempting to get ~{url} with ~{params}"))
+     (println (<< "Attempting to get ~{url}"))
      (handle-response http/get url params)))
