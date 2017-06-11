@@ -1,3 +1,4 @@
 ;; Replace below with your given API key and preferred default region (can specify region)
 {:api-key ""
- :region ""}
+ :region "euw1"
+ :version "v3"}
