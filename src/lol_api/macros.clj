@@ -1,7 +1,6 @@
 (ns lol-api.macros
   (:use [slingshot.slingshot :only [try+]])
-  (:require [lol-api.api.v3.api :refer [get-resource-body]]
-            [lol-api.env :as env]))
+  (:require [lol-api.env :as env]))
 
 (defmacro try-all
   "Simple macro to try/catch multiple statements concisely.

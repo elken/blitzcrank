@@ -6,7 +6,8 @@
             [cheshire.core :as json]
             [clojure.tools.logging :as log]
             [clojure.core.strint :refer [<<]])
-  (:use [slingshot.slingshot :only [throw+]]))
+  (:use [slingshot.slingshot :only [throw+]]
+        [lol-api.macros :only [try-all]]))
 
 (defn- print-if-json-body
   "Don't print huge HTML response bodies"
