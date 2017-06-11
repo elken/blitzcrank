@@ -1,4 +1,5 @@
 ### Prerequisites
+<!-- If correct, replace [ ] with [x] -->
 - [ ] Question has been asked before
 - [ ] You are able to reproduce the issue either on a REPL or another project
 
