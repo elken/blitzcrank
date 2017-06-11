@@ -37,7 +37,7 @@
 (defn region-code?
   "Check if x is a region code"
   [x]
-  (contains? region-codes (keyword x)))
+  (some #(= x %1) (region-codes)))
 
 (defn subregions
   "Get regions from a regional proxy"
