@@ -1,11 +1,34 @@
 (ns lol-api.env
   "Methods to deal with environment settings."
-  (:require [config.core :refer [env]]))
+  (:require [config.core :refer [env]]
+            [lol-api.util :as util]))
+
+(defn- get-or-default
+  "Get a value from the environment, or use a default"
+  [key default]
+  (let [k ((keyword key) env)]
+    (if (or (empty? k) (nil? k)) default k)))
 
 (defn get-api-key
-  "Get the API key from the environment." []
-  (:api-key env))
+  "Get the API key from the environment."
+  []
+  (get-or-default "api-key" nil))
 
 (defn get-region
-  "Get the default region from the environment." []
-  (:region env))
+  "Get the default region from the environment."
+  []
+  (get-or-default "region" "euw1"))
+
+(defn get-version
+  "Get the default version from the environment."
+  []
+  (get-or-default "version" "v3"))
+
+(defn get-region-as-proxy
+  "Get the default region from the environment as a regional proxy."
+  []
+  (let [region (get-region)]
+    (if (util/regional-proxy? region)
+      region
+      (if (util/region-code? region)
+        (util/region-to-proxy region)))))
