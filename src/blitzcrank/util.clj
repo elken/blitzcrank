@@ -1,11 +1,21 @@
-(ns lol-api.util
-  (:require [lol-api.constants :refer :all]
+(ns blitzcrank.util
+  (:require [blitzcrank.constants :refer :all]
             [clojure.pprint :as pprint]))
 
 (defn indicies
   "Test a predicate on a collection and return the indexes"
   [pred coll]
   (keep-indexed #(when (pred %2) %1) coll))
+
+(defn first-as-name
+  "Return the first argument of a sequence as named"
+  [seq]
+  (name (first seq)))
+
+(defn not-nil?
+  "Checks if a value is not nil"
+  [x]
+  (not= nil x))
 
 (defn get-key-by-value
   "Get a value from a collection by value"
@@ -27,7 +37,7 @@
 (defn regional-proxy?
   "Check if x is a regional proxy identifier"
   [x]
-  (not (nil? (some #{x} (map name (keys region-map))))))
+  (not-nil? (some #{x} (map name (keys region-map)))))
 
 (defn region-codes
   "Get all regions"
@@ -44,11 +54,18 @@
   [proxy]
   (get region-map (keyword proxy)))
 
+(defn code-in-region?
+  "Check if a code exists in the region"
+  [code region]
+  (let [region (keyword region)
+        code (keyword code)]
+    (not-nil? (-> region-map region code))))
+
 (defn region-to-proxy
   "Find a regional proxy given a region code"
-  [key]
-  (if (region-code? key)
-    (let [key (keyword key)
+  [code]
+  (if (region-code? code)
+    (let [code (keyword code)
           region-keys (keys region-map)]
-      (name (nth region-keys (first (indicies (complement nil?) (map #(-> region-map %1 key) region-keys))))))))
+      (first-as-name (filter #(code-in-region? code %1) region-keys)))))
 

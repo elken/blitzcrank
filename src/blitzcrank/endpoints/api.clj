@@ -1,7 +1,8 @@
-(ns lol-api.api.v3.api
-  (:require [lol-api.api.http :as http]
-            [lol-api.env :as env]
-            [lol-api.util :refer [map-to-query-string]]
+(ns blitzcrank.endpoints.api
+  "Methods to access the raw API"
+  (:require [blitzcrank.http :as http]
+            [blitzcrank.env :as env]
+            [blitzcrank.util :refer [map-to-query-string]]
             [clojure.core.strint :refer [<<]]
             [cheshire.core :refer :all]))
 

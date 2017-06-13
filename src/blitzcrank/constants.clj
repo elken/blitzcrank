@@ -1,4 +1,4 @@
-(ns lol-api.constants)
+(ns blitzcrank.constants)
 
 (def error-code-map {:400 "Bad request"
                      :401 "Unauthorized"

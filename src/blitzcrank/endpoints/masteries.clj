@@ -1,7 +1,7 @@
-(ns lol-api.api.v3.masteries
-  "API methods for [masteries-v3](https://developer.riotgames.com/api-methods/#masteries-v3)"
-  (:require [lol-api.api.v3.api :as api]
-            [lol-api.api.v3.summoner :as summoner]))
+(ns blitzcrank.endpoints.masteries
+  "API methods for [masteries-v3](https://developer.riotgames.com/endpoints-methods/#masteries-v3)"
+  (:require [blitzcrank.endpoints.api :as api]
+            [blitzcrank.endpoints.summoner :as summoner]))
 
 (defn get-mastery-pages-by-summoner-id
   "Get all mastery pages for a summoner by summoner ID"

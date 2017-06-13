@@ -1,13 +1,13 @@
-(ns lol-api.api.http
+(ns blitzcrank.http
   "HTTP interfacing methods"
-  (:require [lol-api.util :as util]
-            [lol-api.constants :refer [error-code-map]]
+  (:require [blitzcrank.util :as util]
+            [blitzcrank.constants :refer [error-code-map]]
             [clj-http.client :as http]
             [cheshire.core :as json]
             [clojure.tools.logging :as log]
             [clojure.core.strint :refer [<<]])
   (:use [slingshot.slingshot :only [throw+]]
-        [lol-api.macros :only [try-all]]))
+        [blitzcrank.macros :only [try-all]]))
 
 (defn- print-if-json-body
   "Don't print huge HTML response bodies"

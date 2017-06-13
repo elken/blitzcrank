@@ -1,7 +1,7 @@
-(ns lol-api.env
+(ns blitzcrank.env
   "Methods to deal with environment settings."
   (:require [config.core :refer [env]]
-            [lol-api.util :as util]))
+            [blitzcrank.util :as util]))
 
 (defn- get-or-default
   "Get a value from the environment, or use a default"
@@ -12,7 +12,7 @@
 (defn get-api-key
   "Get the API key from the environment."
   []
-  (get-or-default "api-key" nil))
+  (get-or-default "endpoints-key" nil))
 
 (defn get-region
   "Get the default region from the environment."

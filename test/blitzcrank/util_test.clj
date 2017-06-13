@@ -1,6 +1,6 @@
-(ns lol-api.util-test
+(ns blitzcrank.util-test
   (:require [clojure.test :refer :all]
-            [lol-api.util :refer :all]))
+            [blitzcrank.util :refer :all]))
 
 (def ^{:private true} complex-map {:first-parent  {:first-child  "first-value"
                                                    :second-child "second-value"

@@ -1,0 +1,1 @@
+(ns blitzcrank.endpoints.runes)

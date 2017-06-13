@@ -1,4 +1,4 @@
-# lol-api [![Clojars Project](https://img.shields.io/clojars/v/lol-api.svg)](https://clojars.org/lol-api) [![Build Status](https://travis-ci.org/elken/lol-api.svg?branch=master)](https://travis-ci.org/elken/lol-api)
+# blitzcrank [![Clojars Project](https://img.shields.io/clojars/v/blitzcrank.svg)](https://clojars.org/blitzcrank) [![Build Status](https://travis-ci.org/elken/blitzcrank.svg?branch=master)](https://travis-ci.org/elken/blitzcrank)
 
 A Clojure implementation of the public [League of Legends API](https://developer.riotgames.com/). No access to tournament API yet.
 
@@ -7,26 +7,26 @@ Add the library to your project as below:
 
 ### Leiningen/Boot
 ```
-[lol-api "0.0.1"]
+[blitzcrank "0.1.0"]
 ```
 ### Gradle
 ```groovy
-compile "lol-api:lol-api:0.0.1"
+compile "blitzcrank:blitzcrank:0.1.0"
 ```
 ### Maven
 ```xml
 <dependency>
-  <groupId>lol-api</groupId>
-  <artifactId>lol-api</artifactId>
-  <version>0.0.1</version>
+  <groupId>blitzcrank</groupId>
+  <artifactId>blitzcrank</artifactId>
+  <version>0.1.0</version>
 </dependency>
 ```
 
-API methods are located in the `lol-api.api.<version>` namespace.
+API methods are located in the `blitzcrank.endpoints>` namespace.
 
 ### Example
 ```clojure
-user=> (require '[lol-api.api.v3.summoner :as summoner])
+user=> (require '[blitzcrank.endpoints.summoner :as summoner])
 nil
 user=> (summoner/get-summoner-by-name "Instadrone" {:api-key "AVALIDKEY"})
 Attempting to get https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/Instadrone
@@ -40,12 +40,12 @@ Attempting to get https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-na
 | [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3) | Not yet implemented | |
 | [league-v3](https://developer.riotgames.com/api-methods/#league-v3) | Not yet implemented | |
 | [static-data-v3](https://developer.riotgames.com/api-methods/#lol-static-data-v3) | Not yet implemented | |
-| [lol-status-v3](https://developer.riotgames.com/api-methods/#lol-status-v3) | [Implemented](https://github.com/elken/lol-api/blob/master/src/lol_api/api/v3/status.clj) | [aae08dc](https://github.com/elken/lol-api/commit/aae08dcfa2746106b00d0979e0e9f05e097e065f) |
-| [masteries-v3](https://developer.riotgames.com/api-methods/#masteries-v3) | [Implemented](https://github.com/elken/lol-api/blob/master/src/lol_api/api/v3/masteries.clj) | [7a4610e](https://github.com/elken/lol-api/commit/7a4610e03fbb3fa643b5d3c0f74e1e6a75f94b04) |
+| [lol-status-v3](https://developer.riotgames.com/api-methods/#lol-status-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/api/v3/status.clj) | [aae08dc](https://github.com/elken/blitzcrank/commit/aae08dcfa2746106b00d0979e0e9f05e097e065f) |
+| [masteries-v3](https://developer.riotgames.com/api-methods/#masteries-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/api/v3/masteries.clj) | [7a4610e](https://github.com/elken/blitzcrank/commit/7a4610e03fbb3fa643b5d3c0f74e1e6a75f94b04) |
 | [match-v3](https://developer.riotgames.com/api-methods/#match-v3) | Not yet implemented | |
 | [runes-v3](https://developer.riotgames.com/api-methods/#runes-v3) | Not yet implemented | |
 | [spectator-v3](https://developer.riotgames.com/api-methods/#spectator-v3) | Not yet implemented | |
-| [summoner-v3](https://developer.riotgames.com/api-methods/#summoner-v3) | [Implemented](https://github.com/elken/lol-api/blob/master/src/lol_api/api/v3/summoner.clj) | [4f02eab](https://github.com/elken/lol-api/commit/4f02eab23fcdbe87c160503b5333de7358525fd5#diff-63c71c866bf369dee4124a3ab90fc8e3) |
+| [summoner-v3](https://developer.riotgames.com/api-methods/#summoner-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/api/v3/summoner.clj) | [4f02eab](https://github.com/elken/blitzcrank/commit/4f02eab23fcdbe87c160503b5333de7358525fd5#diff-63c71c866bf369dee4124a3ab90fc8e3) |
 
 ## Config
 
@@ -78,7 +78,7 @@ Currently, this library only supports version 3 of the API, but this field has b
 Run in a REPL with `lein repl`. 
 
 ### Documentation
-API documentation is [available](https://elken.github.io/lol-api/) and 
+API documentation is [available](https://elken.github.io/blitzcrank/) and 
 generated using [codox](https://github.com/weavejester/codox). Generate using `lein codox`, which by default will output
 the docs to `../docs`. <!-- Need to get rid of this ASAP -->
 

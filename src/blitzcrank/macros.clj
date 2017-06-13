@@ -1,6 +1,5 @@
-(ns lol-api.macros
-  (:use [slingshot.slingshot :only [try+]])
-  (:require [lol-api.env :as env]))
+(ns blitzcrank.macros
+  (:use [slingshot.slingshot :only [try+]]))
 
 (defmacro try-all
   "Simple macro to try/catch multiple statements concisely.

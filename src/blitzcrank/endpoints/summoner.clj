@@ -1,8 +1,6 @@
-(ns lol-api.api.v3.summoner
-  "API methods for [summoner-v3](https://developer.riotgames.com/api-methods/#summoner-v3)"
-  (:require [lol-api.api.v3.api :as api]
-            [clojure.core.strint :refer [<<]]
-            [lol-api.env :as env]))
+(ns blitzcrank.endpoints.summoner
+  "API methods for [summoner-v3](https://developer.riotgames.com/endpoints-methods/#summoner-v3)"
+  (:require [blitzcrank.endpoints.api :as api]))
 
 (defn get-summoner-by-name
   "Get a summoner by summoner name."
