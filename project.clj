@@ -12,6 +12,6 @@
                  [clj-http "3.6.1"]
                  [cheshire "5.7.1"]]
   :codox
-  {:output-path "../docs"
+  {:output-path "docs"
    :metadata    {:doc/format :markdown}
    :source-uri  "http://github.com/elken/blitzcrank/blob/master/{filepath}#L{line}"})
