@@ -9,15 +9,14 @@
 (defn get-resource
   "Primary method to get a valid URL for API access"
   [resource route & [options]]
-  (let [{:keys [api-key region path-params query-map version]
+  (let [{:keys [api-key region path-params query-map]
          :or   {api-key     (env/get-api-key)
                 region      (env/get-region)
-                version     (env/get-version)
                 path-params nil
                 query-map   nil
                 route       nil}} options
         query-params (if query-map (<< "?~{(map-to-query-string query-map)}"))
-        url (<< "https://~{region}.api.riotgames.com/lol/~{resource}/~{version}/~{route}/~{path-params}~{query-params}")]
+        url (<< "https://~{region}.api.riotgames.com/lol/~{resource}/v3/~{route}/~{path-params}~{query-params}")]
     (http/get-resource url {:headers {:X-Riot-Token api-key}})))
 
 (defn get-resource-body

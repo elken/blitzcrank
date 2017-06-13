@@ -19,11 +19,6 @@
   []
   (get-or-default "region" "euw1"))
 
-(defn get-version
-  "Get the default version from the environment."
-  []
-  (get-or-default "version" "v3"))
-
 (defn get-region-as-proxy
   "Get the default region from the environment as a regional proxy."
   []
