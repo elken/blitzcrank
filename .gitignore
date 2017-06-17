@@ -12,3 +12,7 @@ pom.xml.asc
 /.idea/
 /blitzcrank.iml
 config.edn
+
+*.log
+
+TAGS

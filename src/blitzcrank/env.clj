@@ -19,6 +19,11 @@
   []
   (get-or-default "region" "euw1"))
 
+(defn get-locale
+  "Get the locale from the environment."
+  []
+  (get-or-default "locale" (str (java.util.Locale/getDefault))))
+
 (defn get-region-as-proxy
   "Get the default region from the environment as a regional proxy."
   []

@@ -7,18 +7,18 @@ Add the library to your project as below:
 
 ### Leiningen/Boot
 ```
-[blitzcrank "0.1.0"]
+[blitzcrank "0.1.1"]
 ```
 ### Gradle
 ```groovy
-compile "blitzcrank:blitzcrank:0.1.0"
+compile "blitzcrank:blitzcrank:0.1.1"
 ```
 ### Maven
 ```xml
 <dependency>
   <groupId>blitzcrank</groupId>
   <artifactId>blitzcrank</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 
@@ -64,14 +64,20 @@ Currently supported options are:
 Primarily used for testing, but can also be used to simplify the application. Every call to an API method will attempt 
 to read this value if no argument is passed.
 
+Default: None, must be entered by user if desired.
+
 ### `region`
 
 Default region to use for API calls. As before, every call to an API method can be called with a region. Setting this 
 to your largest projected userbase would be a sensible idea.
 
-### `version`
+Default: `euw1`
 
-Currently, this library only supports version 3 of the API, but this field has been added if the API were to mutate.
+### `locale`
+
+This is used by the `lol-status` endpoint in order to attempt to get a localized version of a status message.
+
+Default: `en_GB`
 
 ## Development
 

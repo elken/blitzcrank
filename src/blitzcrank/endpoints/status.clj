@@ -1,14 +1,38 @@
 (ns blitzcrank.endpoints.status
   "API methods for [status-v3](https://developer.riotgames.com/endpoints-methods/#lol-status-v3)"
   (:require [blitzcrank.endpoints.api :as api]
-            [blitzcrank.util :refer [region-codes]]))
+            [blitzcrank.util :refer [region-codes]]
+            [blitzcrank.env :as env]))
 
-(defn get-all-endpoints-for-region
+(defn translate [shard-data & [locale]]
+  (letfn [(choose-translation [translations]
+            (let [applicable (filter #(= (:locale %) (or locale (env/get-locale)))
+                                     translations)]
+              (when (= 1 (count applicable))
+                (:content (first applicable)))))
+          (translate-update [update]
+            (-> update
+                (assoc :content (or (choose-translation (:translations update))
+                                    (:content update)))
+                (dissoc :translations)))]
+    (for [user (:services shard-data)]
+      (update user :incidents
+              (fn [incidents]
+                (for [incident incidents]
+                  (update incident :updates
+                          (fn [updates]
+                            (for [update updates]
+                              (translate-update update))))))))))
+
+(defn get-endpoints-by-region
   "Get API status for all the endpoints in a given region"
   [region & [options]]
-  (api/get-resource-body "status" "shard-data" (merge {:region region} options)))
+  (letfn [(result []
+            (api/get-resource-body "status" "shard-data" (merge {:region region} options)))]
+    (if (:translate? options)
+      (translate (result) (or (:locale options) (env/get-locale))) (result))))
 
 (defn get-all-endpoints
   "Get API status for all endpoints in all regions"
   []
-  (map get-all-endpoints-for-region (remove #(= %1 "na") (region-codes))))
+  (map get-endpoints-by-region (remove #(= %1 "na") (region-codes))))
