@@ -2,6 +2,11 @@
   (:require [blitzcrank.constants :refer :all]
             [clojure.pprint :as pprint]))
 
+(defn valid-api-key?
+  "Simple regex to verify if a key should be valid"
+  [api-key]
+  (not= nil (re-matches #"(?i)(?:RGAPI-)?[0-9A-F]{8}-[0-9A-F]{4}-[1-5][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}" api-key)))
+
 (defn indicies
   "Test a predicate on a collection and return the indexes"
   [pred coll]
@@ -68,4 +73,3 @@
     (let [code (keyword code)
           region-keys (keys region-map)]
       (first-as-name (filter #(code-in-region? code %1) region-keys)))))
-

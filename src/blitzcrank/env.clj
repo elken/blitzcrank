@@ -12,7 +12,7 @@
 (defn get-api-key
   "Get the API key from the environment."
   []
-  (get-or-default "endpoints-key" nil))
+  (get-or-default "api-key" nil))
 
 (defn get-region
   "Get the default region from the environment."

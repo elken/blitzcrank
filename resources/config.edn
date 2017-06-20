@@ -1,4 +1,0 @@
-;; Replace below with your given API key and preferred default region (can specify region)
-{:api-key ""
- :locale "en_GB"
- :region "euw1"}

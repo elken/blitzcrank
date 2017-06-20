@@ -2,7 +2,7 @@
   "Methods to access the raw API"
   (:require [blitzcrank.http :as http]
             [blitzcrank.env :as env]
-            [blitzcrank.util :refer [map-to-query-string]]
+            [blitzcrank.util :refer [valid-api-key? map-to-query-string]]
             [clojure.core.strint :refer [<<]]
             [cheshire.core :refer :all]))
 
@@ -17,6 +17,7 @@
                 route       nil}} options
         query-params (if query-map (<< "?~{(map-to-query-string query-map)}"))
         url (<< "https://~{region}.api.riotgames.com/lol/~{resource}/v3/~{route}/~{path-params}~{query-params}")]
+    (if (true? (valid-api-key? api-key)) (prn "Invalid API key"))
     (http/get-resource url {:headers {:X-Riot-Token api-key}})))
 
 (defn get-resource-body
