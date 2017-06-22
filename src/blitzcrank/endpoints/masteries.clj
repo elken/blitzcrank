@@ -2,12 +2,13 @@
   "API methods for [masteries-v3](https://developer.riotgames.com/endpoints-methods/#masteries-v3)"
   (:require [blitzcrank.endpoints
              [api :as api]
-             [summoner :as summoner]]))
+             [summoner :as summoner]]
+            [clojure.core.strint :refer [<<]]))
 
 (defn by-id
   "Get all mastery pages for a summoner by summoner ID"
   [summoner-id & [options]]
-  (api/resource-body "platform" "masteries/by-summoner" (merge {:path-params summoner-id} options)))
+  (api/resource-body "platform" (<< "masteries/by-summoner/~{summoner-id}") options))
 
 (defn by-name
   "Get all mastery pages for a summoner by summoner name"

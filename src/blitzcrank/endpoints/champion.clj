@@ -1,6 +1,7 @@
 (ns blitzcrank.endpoints.champion
   "API methods for [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3)"
-  (:require [blitzcrank.endpoints.api :as api]))
+  (:require [blitzcrank.endpoints.api :as api]
+            [clojure.core.strint :refer [<<]]))
 
 (defn all
   "Get all champions"
@@ -10,7 +11,7 @@
 (defn by-id
   "Get a champion by champion ID"
   [id & [options]]
-  (api/resource-body "platform" "champions" (merge {:path-params id} options)))
+  (api/resource-body "platform" (<< "champions/~{id}") options))
 
 (defn all-ranked
   "Get all champions allowed in ranked"

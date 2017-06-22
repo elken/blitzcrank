@@ -12,14 +12,13 @@
   [resource route & [options]]
   (if (and (empty? (:api-key options)) (empty? (env/get-api-key)))
     (println "Missing API key")
-    (let [{:keys [api-key region path-params query-map]
+    (let [{:keys [api-key region query-map]
            :or   {api-key     (env/get-api-key)
                   region      (env/get-region)
-                  path-params nil
                   query-map   nil
                   route       nil}} options
           query-params (if query-map (<< "?~{(map-to-query-string query-map)}"))
-          url (<< "https://~{region}.api.riotgames.com/lol/~{resource}/v3/~{route}/~{path-params}~{query-params}")]
+          url (<< "https://~{region}.api.riotgames.com/lol/~{resource}/v3/~{route}~{query-params}")]
       (if (false? (valid-api-key? api-key)) (println "Invalid API key") (http/get-resource url {:headers {:X-Riot-Token api-key}})))))
 
 (defn resource-body

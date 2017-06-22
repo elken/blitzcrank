@@ -4,7 +4,8 @@
              [util :refer [region-codes]]
              [env :as env]]
             [blitzcrank.endpoints
-             [api :as api]]))
+             [api :as api]]
+            [clojure.core.strint :refer [<<]]))
 
 (defn translate [shard-data & [locale]]
   (letfn [(choose-translation [translations]
@@ -30,7 +31,7 @@
   "Get API status for all the endpoints in a given region"
   [region & [options]]
   (letfn [(result []
-            (api/resource-body "status" "shard-data" (merge {:region region} options)))]
+            (api/resource-body "status" "shard-data/~{region}" options))]
     (if (:translate? options)
       (translate (result) (or (:locale options) (env/get-locale))) (result))))
 
