@@ -7,18 +7,18 @@ Add the library to your project as below:
 
 ### Leiningen/Boot
 ```
-[blitzcrank "0.1.3"]
+[blitzcrank "0.1.4"]
 ```
 ### Gradle
 ```groovy
-compile "blitzcrank:blitzcrank:0.1.3"
+compile "blitzcrank:blitzcrank:0.1.4"
 ```
 ### Maven
 ```xml
 <dependency>
   <groupId>blitzcrank</groupId>
   <artifactId>blitzcrank</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.4</version>
 </dependency>
 ```
 
@@ -40,18 +40,18 @@ Attempting to get https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-na
 
 ```
 ## Feature parity
-| Feature| Status| Commit |
-| -------- | -------- |---- |
-| [champion-mastery-v3](https://developer.riotgames.com/api-methods/#champion-mastery-v3)   | Not yet implemented  | -|
-| [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/champion.clj) | [7536d67](https://github.com/elken/blitzcrank/commit/7536d67b2ac76daa221c295ac7aeafdcf8d35751)|
-| [league-v3](https://developer.riotgames.com/api-methods/#league-v3) | Not yet implemented | -|
-| [static-data-v3](https://developer.riotgames.com/api-methods/#lol-static-data-v3) | Not yet implemented |- |
-| [lol-status-v3](https://developer.riotgames.com/api-methods/#lol-status-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/status.clj) | [aae08dc](https://github.com/elken/blitzcrank/commit/aae08dcfa2746106b00d0979e0e9f05e097e065f) |
-| [masteries-v3](https://developer.riotgames.com/api-methods/#masteries-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/masteries.clj) | [7a4610e](https://github.com/elken/blitzcrank/commit/7a4610e03fbb3fa643b5d3c0f74e1e6a75f94b04) |
-| [match-v3](https://developer.riotgames.com/api-methods/#match-v3) | Not yet implemented | - |
-| [runes-v3](https://developer.riotgames.com/api-methods/#runes-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/runes.clj) | [fe8ce8a](https://github.com/elken/blitzcrank/commit/fe8ce8a246d72a5d6967b790e35560cd6313de8a)|
-| [spectator-v3](https://developer.riotgames.com/api-methods/#spectator-v3) | Not yet implemented | -|
-| [summoner-v3](https://developer.riotgames.com/api-methods/#summoner-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/summoner.clj) | [4f02eab](https://github.com/elken/blitzcrank/commit/4f02eab23fcdbe87c160503b5333de7358525fd5#diff-63c71c866bf369dee4124a3ab90fc8e3) |
+| Feature| Status| 
+| -------- | -------- |
+| [champion-mastery-v3](https://developer.riotgames.com/api-methods/#champion-mastery-v3)   | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/champion_mastery.clj) 
+| [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/champion.clj)
+| [league-v3](https://developer.riotgames.com/api-methods/#league-v3) | Not yet implemented |
+| [static-data-v3](https://developer.riotgames.com/api-methods/#lol-static-data-v3) | Not yet implemented |
+| [lol-status-v3](https://developer.riotgames.com/api-methods/#lol-status-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/status.clj) 
+| [masteries-v3](https://developer.riotgames.com/api-methods/#masteries-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/masteries.clj)
+| [match-v3](https://developer.riotgames.com/api-methods/#match-v3) | Not yet implemented | 
+| [runes-v3](https://developer.riotgames.com/api-methods/#runes-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/runes.clj)
+| [spectator-v3](https://developer.riotgames.com/api-methods/#spectator-v3) | Not yet implemented |
+| [summoner-v3](https://developer.riotgames.com/api-methods/#summoner-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/summoner.clj) 
 
 ## Config
 
