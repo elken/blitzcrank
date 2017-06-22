@@ -7,18 +7,18 @@ Add the library to your project as below:
 
 ### Leiningen/Boot
 ```
-[blitzcrank "0.1.2"]
+[blitzcrank "0.1.3"]
 ```
 ### Gradle
 ```groovy
-compile "blitzcrank:blitzcrank:0.1.2"
+compile "blitzcrank:blitzcrank:0.1.3"
 ```
 ### Maven
 ```xml
 <dependency>
   <groupId>blitzcrank</groupId>
   <artifactId>blitzcrank</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
 </dependency>
 ```
 
@@ -43,7 +43,7 @@ Attempting to get https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-na
 | Feature| Status| Commit |
 | -------- | -------- |---- |
 | [champion-mastery-v3](https://developer.riotgames.com/api-methods/#champion-mastery-v3)   | Not yet implemented  | -|
-| [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3) | Not yet implemented | -|
+| [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/champion.clj) | [7536d67](https://github.com/elken/blitzcrank/commit/7536d67b2ac76daa221c295ac7aeafdcf8d35751)|
 | [league-v3](https://developer.riotgames.com/api-methods/#league-v3) | Not yet implemented | -|
 | [static-data-v3](https://developer.riotgames.com/api-methods/#lol-static-data-v3) | Not yet implemented |- |
 | [lol-status-v3](https://developer.riotgames.com/api-methods/#lol-status-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/status.clj) | [aae08dc](https://github.com/elken/blitzcrank/commit/aae08dcfa2746106b00d0979e0e9f05e097e065f) |
