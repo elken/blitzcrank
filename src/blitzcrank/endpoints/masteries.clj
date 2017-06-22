@@ -12,4 +12,4 @@
 (defn mastery-pages-by-name
   "Get all mastery pages for a summoner by summoner name"
   [summoner-name & [options]]
-  (mastery-pages-by-id (summoner/get-summoner-id-by-name summoner-name) options))
+  (mastery-pages-by-id (summoner/id-by-name summoner-name) options))

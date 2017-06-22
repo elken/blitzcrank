@@ -7,18 +7,18 @@ Add the library to your project as below:
 
 ### Leiningen/Boot
 ```
-[blitzcrank "0.1.1"]
+[blitzcrank "0.1.2"]
 ```
 ### Gradle
 ```groovy
-compile "blitzcrank:blitzcrank:0.1.1"
+compile "blitzcrank:blitzcrank:0.1.2"
 ```
 ### Maven
 ```xml
 <dependency>
   <groupId>blitzcrank</groupId>
   <artifactId>blitzcrank</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ API methods are located in the `blitzcrank.endpoints` namespace.
 ```clojure
 user=> (require '[blitzcrank.endpoints.summoner :as summoner])
 nil
-user=> (summoner/get-summoner-by-name "Instadrone" {:api-key "AVALIDKEY"})
+user=> (summoner/summoner-by-name "Instadrone" {:api-key "AVALIDKEY"})
 Attempting to get https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/Instadrone
 {:id 44040660, :accountId 37951631, :name "Instadrone", :profileIconId 1470, :revisionDate 1496956028000, :summonerLevel 30}
 
@@ -36,15 +36,15 @@ Attempting to get https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-na
 ## Feature parity
 | Feature| Status| Commit |
 | -------- | -------- |---- |
-| [champion-mastery-v3](https://developer.riotgames.com/api-methods/#champion-mastery-v3)   | Not yet implemented  | |
-| [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3) | Not yet implemented | |
-| [league-v3](https://developer.riotgames.com/api-methods/#league-v3) | Not yet implemented | |
-| [static-data-v3](https://developer.riotgames.com/api-methods/#lol-static-data-v3) | Not yet implemented | |
+| [champion-mastery-v3](https://developer.riotgames.com/api-methods/#champion-mastery-v3)   | Not yet implemented  | -|
+| [champion-v3](https://developer.riotgames.com/api-methods/#champion-v3) | Not yet implemented | -|
+| [league-v3](https://developer.riotgames.com/api-methods/#league-v3) | Not yet implemented | -|
+| [static-data-v3](https://developer.riotgames.com/api-methods/#lol-static-data-v3) | Not yet implemented |- |
 | [lol-status-v3](https://developer.riotgames.com/api-methods/#lol-status-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/status.clj) | [aae08dc](https://github.com/elken/blitzcrank/commit/aae08dcfa2746106b00d0979e0e9f05e097e065f) |
 | [masteries-v3](https://developer.riotgames.com/api-methods/#masteries-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/masteries.clj) | [7a4610e](https://github.com/elken/blitzcrank/commit/7a4610e03fbb3fa643b5d3c0f74e1e6a75f94b04) |
-| [match-v3](https://developer.riotgames.com/api-methods/#match-v3) | Not yet implemented | |
-| [runes-v3](https://developer.riotgames.com/api-methods/#runes-v3) | Not yet implemented | |
-| [spectator-v3](https://developer.riotgames.com/api-methods/#spectator-v3) | Not yet implemented | |
+| [match-v3](https://developer.riotgames.com/api-methods/#match-v3) | Not yet implemented | - |
+| [runes-v3](https://developer.riotgames.com/api-methods/#runes-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/runes.clj) | [fe8ce8a](https://github.com/elken/blitzcrank/commit/fe8ce8a246d72a5d6967b790e35560cd6313de8a)|
+| [spectator-v3](https://developer.riotgames.com/api-methods/#spectator-v3) | Not yet implemented | -|
 | [summoner-v3](https://developer.riotgames.com/api-methods/#summoner-v3) | [Implemented](https://github.com/elken/blitzcrank/blob/master/src/blitzcrank/endpoints/summoner.clj) | [4f02eab](https://github.com/elken/blitzcrank/commit/4f02eab23fcdbe87c160503b5333de7358525fd5#diff-63c71c866bf369dee4124a3ab90fc8e3) |
 
 ## Config

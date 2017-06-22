@@ -12,4 +12,4 @@
 (defn rune-pages-by-name
   "Get all rune pages for a summoner by summoner name"
   [name & [options]]
-  (rune-pages-by-id (summoner/get-summoner-id-by-name name) options))
+  (rune-pages-by-id (summoner/id-by-name name) options))
