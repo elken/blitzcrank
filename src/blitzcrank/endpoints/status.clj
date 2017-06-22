@@ -1,8 +1,10 @@
 (ns blitzcrank.endpoints.status
   "API methods for [status-v3](https://developer.riotgames.com/endpoints-methods/#lol-status-v3)"
-  (:require [blitzcrank.endpoints.api :as api]
-            [blitzcrank.util :refer [region-codes]]
-            [blitzcrank.env :as env]))
+  (:require [blitzcrank
+             [util :refer [region-codes]]
+             [env :as env]]
+            [blitzcrank.endpoints
+             [api :as api]]))
 
 (defn translate [shard-data & [locale]]
   (letfn [(choose-translation [translations]
@@ -24,7 +26,7 @@
                             (for [update updates]
                               (translate-update update))))))))))
 
-(defn get-endpoints-by-region
+(defn endpoints-for-one
   "Get API status for all the endpoints in a given region"
   [region & [options]]
   (letfn [(result []
@@ -32,7 +34,7 @@
     (if (:translate? options)
       (translate (result) (or (:locale options) (env/get-locale))) (result))))
 
-(defn get-all-endpoints
+(defn endpoints-for-all
   "Get API status for all endpoints in all regions"
   []
-  (map get-endpoints-by-region (remove #(= %1 "na") (region-codes))))
+  (map endpoints-for-one (remove #(= %1 "na") (region-codes))))

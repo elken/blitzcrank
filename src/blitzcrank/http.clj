@@ -1,7 +1,8 @@
 (ns blitzcrank.http
   "HTTP interfacing methods"
-  (:require [blitzcrank.util :as util]
-            [blitzcrank.constants :refer [error-code-map]]
+  (:require [blitzcrank
+             [util :as util]
+             [constants :refer [error-code-map]]]
             [clj-http.client :as http]
             [cheshire.core :as json]
             [clojure.tools.logging :as log]
