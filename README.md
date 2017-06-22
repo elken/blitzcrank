@@ -27,10 +27,16 @@ API methods are located in the `blitzcrank.endpoints` namespace.
 ### Example
 ```clojure
 user=> (require '[blitzcrank.endpoints.summoner :as summoner])
-nil
-user=> (summoner/summoner-by-name "Instadrone" {:api-key "AVALIDKEY"})
+=> nil
+user=> (summoner/by-name "Instadrone" {:api-key "AVALIDKEY"})
 Attempting to get https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/Instadrone
-{:id 44040660, :accountId 37951631, :name "Instadrone", :profileIconId 1470, :revisionDate 1496956028000, :summonerLevel 30}
+=>
+{:id 44040660,
+ :accountId 37951631,
+ :name "Instadrone",
+ :profileIconId 1666,
+ :revisionDate 1497913390000,
+ :summonerLevel 30}
 
 ```
 ## Feature parity
