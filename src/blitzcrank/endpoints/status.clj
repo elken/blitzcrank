@@ -26,15 +26,15 @@
                             (for [update updates]
                               (translate-update update))))))))))
 
-(defn endpoints-for-one
+(defn for-region
   "Get API status for all the endpoints in a given region"
   [region & [options]]
   (letfn [(result []
-            (api/get-resource-body "status" "shard-data" (merge {:region region} options)))]
+            (api/resource-body "status" "shard-data" (merge {:region region} options)))]
     (if (:translate? options)
       (translate (result) (or (:locale options) (env/get-locale))) (result))))
 
-(defn endpoints-for-all
+(defn for-all
   "Get API status for all endpoints in all regions"
   []
-  (map endpoints-for-one (remove #(= %1 "na") (region-codes))))
+  (map for-region (remove #(= %1 "na") (region-codes))))

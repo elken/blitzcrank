@@ -22,7 +22,7 @@
           url (<< "https://~{region}.api.riotgames.com/lol/~{resource}/v3/~{route}/~{path-params}~{query-params}")]
       (if (false? (valid-api-key? api-key)) (println "Invalid API key") (http/get-resource url {:headers {:X-Riot-Token api-key}})))))
 
-(defn get-resource-body
+(defn resource-body
   "Get a valid URL and return the body"
   [resource route & [options]]
   (parse-string (:body (get-resource resource route options)) true))
