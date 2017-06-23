@@ -1,4 +1,4 @@
-(defproject blitzcrank "0.1.4"
+(defproject blitzcrank "0.1.5"
   :description "Clojure version of the League of Legends API"
   :url "https://github.com/elken/blitzcrank"
   :license {:name "BSD 3 Clause"
