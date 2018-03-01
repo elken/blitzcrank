@@ -27,7 +27,10 @@
 
 (deftest map-to-query-string-test
   (testing "map-to-query-string with {:firstname \"bob\" :secondname \"jones\"}"
-    (is (= (map-to-query-string {:firstname "bob" :secondname "jones"}) "firstname=bob&secondname=jones"))))
+    (is (= (map-to-query-string {:firstname "bob" :secondname "jones"}) "firstname=bob&secondname=jones")))
+  (testing "map-to-query-string with {:firstname \"bob\" :othernames [\"jones\" \"smith\" \"banks\"]}"
+    (is (= (map-to-query-string {:firstname "bob" :othernames ["jones" "smith" "banks"]})
+           "firstname=bob&othernames=jones&othernames=smith&othernames=banks"))))
 
 (deftest regional-proxy?-test
   (testing "regional-proxy? with all valid proxies and one invalid"

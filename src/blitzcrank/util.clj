@@ -35,9 +35,16 @@
 
 (defn map-to-query-string
   "Convert a hash to a URL query string"
-  [map]
-  (clojure.string/join "&" (for [[k v] map]
-                             (str (name k) "=" v))))
+  [m]
+  (->> m
+       (reduce-kv (fn [a k v]
+                    (if (sequential? v)
+                      (reduce #(conj %1 [k %2]) a v)
+                      (conj a [k v]))) '())
+       (map (fn [[k v]]
+              (str (name k) "=" v)))
+       (reverse)
+       (clojure.string/join "&")))
 
 (defn regional-proxy?
   "Check if x is a regional proxy identifier"
