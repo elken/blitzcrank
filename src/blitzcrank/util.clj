@@ -40,9 +40,10 @@
        (reduce-kv (fn [a k v]
                     (if (sequential? v)
                       (reduce #(conj %1 [k %2]) a v)
-                      (conj a [k v]))) #{})
+                      (conj a [k v]))) '())
        (map (fn [[k v]]
               (str (name k) "=" v)))
+       (reverse)
        (clojure.string/join "&")))
 
 (defn regional-proxy?
